@@ -1,2 +1,2 @@
-#### Blog generator for efdcba.github.io.
+#### Blog generator for gas1121.github.io.
 #### Theme modified from NexT.

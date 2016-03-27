@@ -2,10 +2,10 @@ deployment:
   production:
     branch: master
     commands:
-      - git config --global user.name "efdcba"
-      - git config --global user.email "jtdzhx@163.com"
-      - sed -i'' "s~https://github.com/efdcba/efdcba.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/efdcba/efdcba.github.io.git~" _config.yml
-      - git clone https://github.com/efdcba/efdcba.github.io.git .deploy_git
+      - git config --global user.name "gas1121"
+      - git config --global user.email "jtdzhx@gmail.com"
+      - sed -i'' "s~https://github.com/gas1121/gas1121.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/gas1121/gas1121.github.io.git~" _config.yml
+      - git clone https://github.com/gas1121/gas1121.github.io.git .deploy_git
       - hexo clean
       - hexo generate
       - hexo deploy
