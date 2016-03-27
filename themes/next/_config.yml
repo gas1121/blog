@@ -6,12 +6,12 @@
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "blog"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: false
 
 # Specify the date when the site was setup
 #since: 2015
@@ -27,10 +27,11 @@ rss:
 # Remove leading slashes ( "/archives" -> "archives" )
 menu:
   home: /
-  #categories: /categories
-  #about: /about
   archives: /archives
+  categories: /categories
   tags: /tags
+  lab: /lab
+  about: /about
   #commonweal: /404.html
 
 
@@ -43,10 +44,11 @@ menu_icons:
   enable: true
   # Icon Mapping.
   home: home
-  about: user
+  archives: archive
   categories: th
   tags: tags
-  archives: archive
+  about: user
+  lab: flask
   commonweal: heartbeat
 
 
@@ -57,9 +59,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 
 
 
@@ -69,8 +71,8 @@ scheme: Muse
 
 
 # Social links
-# social:
-  #GitHub:
+social:
+  GitHub: https://github.com/efdcba
   #Others:
 
 # Social Icons
@@ -86,7 +88,7 @@ social_icons:
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
 # default : /images/default_avatar.jpg
-#avatar:
+avatar: /images/gas1121/avatar.jpg
 
 
 # TOC in the Sidebar
