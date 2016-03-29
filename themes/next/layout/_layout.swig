@@ -40,6 +40,11 @@
           {% block sidebar %}{% endblock %}
         {% endif %}
       </div>
+      {% raw %}
+      <div id="app">
+          {{ message }}
+      </div>
+      {% endraw %}
     </main>
 
     <footer id="footer" class="footer">
@@ -69,6 +74,9 @@
   {% include '_scripts/third-party/mathjax.swig' %}
   {% include '_scripts/third-party/lean-analytics.swig' %}
   {% include '_scripts/baidu-push.swig' %}
-
+  
+  {# In lab page add custom js file to customize page #}
+  <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/lib/vue.js" charset="utf-8"></script>
+  <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/main.js" charset="utf-8"></script>
 </body>
 </html>
