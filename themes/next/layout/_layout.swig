@@ -76,7 +76,9 @@
   {% include '_scripts/baidu-push.swig' %}
   
   {# In lab page add custom js file to customize page #}
-  <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/lib/vue.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://cdn.bootcss.com/vue/1.0.17/vue.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://cdn.bootcss.com/vue-router/0.7.11/vue-router.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js" charset="utf-8"></script>
   <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/main.js" charset="utf-8"></script>
 </body>
 </html>
