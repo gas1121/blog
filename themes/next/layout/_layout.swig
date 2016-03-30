@@ -40,11 +40,6 @@
           {% block sidebar %}{% endblock %}
         {% endif %}
       </div>
-      {% raw %}
-      <div id="app">
-          {{ message }}
-      </div>
-      {% endraw %}
     </main>
 
     <footer id="footer" class="footer">
