@@ -34,8 +34,11 @@ function bootstrap() {
 
   // Define Motion Sequence.
   NexT.motion.integrator
-    .add(NexT.motion.middleWares.logo)
-    .add(NexT.motion.middleWares.menu)
+    .add(NexT.motion.middleWares.logo);
+  // when called by ajax, ignore menu motion.
+  (!CONFIG.in_ajax) && NexT.motion.integrator
+    .add(NexT.motion.middleWares.menu);
+  NexT.motion.integrator
     .add(NexT.motion.middleWares.postList)
     .add(NexT.motion.middleWares.sidebar);
 

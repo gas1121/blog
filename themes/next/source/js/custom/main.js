@@ -7,7 +7,6 @@
 //TODO use promise to replace callback
 
 //spa mode problem
-//TODO close menu motion
 //TODO select motion by page type
 //TODO post-details.swig only exists in some pages
 //TODO title name differs with different address
@@ -26,8 +25,6 @@ function ReplaceHtmlData(context) {
     console.log(context);
     console.log(context.path);
     Vue.http.get(context.path).then(function (response) {
-        var path = window.location.pathname;
-        console.log(path);
         let receivedHTML = $('<div/>').append(response.data);
         $('.sidebar-inner').replaceWith(receivedHTML.find('.sidebar-inner'));
         $('#content').fadeOut("slow", function() {
