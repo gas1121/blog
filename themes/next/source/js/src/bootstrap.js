@@ -27,7 +27,9 @@ function bootstrap() {
 
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
   //disable functin call when in ajax
-  //(!CONFIG.in_ajax) && NexT.utils.embeddedVideoTransformer();
+  (!CONFIG.in_ajax) && NexT.utils.embeddedVideoTransformer();
+  //remove 'menu-item-active' class first before add
+  NexT.utils.removeActiveClassToMenuItem();
   NexT.utils.addActiveClassToMenuItem();
 
   // Define Motion Sequence.

@@ -4,10 +4,17 @@
 //TODO make code pretty
 //TODO follow es2015 coding pattern
 //TODO add test and comment
-//TODO title name differs with different address
 //TODO use promise to replace callback
+
+//spa mode problem
 //TODO close menu motion
-//TODO menu highlight error
+//TODO select motion by page type
+//TODO post-details.swig only exists in some pages
+//TODO title name differs with different address
+//TODO sidebar scroll stay effect don't work
+
+//music player problem
+//TODO music player size and position
 
 //Register and start router
 page('/(.*)', ReplaceHtmlData);
@@ -34,8 +41,6 @@ function ReplaceHtmlData(context) {
     });
 }
 
-//TODO select motion by page type
-//TODO post-details.swig only exists in some pages
 function Reboot() {
     //viaibale to identify spa mode
     CONFIG.in_ajax = true;
