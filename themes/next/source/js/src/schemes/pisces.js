@@ -1,4 +1,6 @@
-$(document).ready(function () {
+//$(document).ready(function () {
+$(document).ready(pisces);
+function pisces() {
   var $sidebar = $('#sidebar');
   var headerHeight = $('.header-inner').height();
   var footerOffset = parseInt($('.main').css('padding-bottom'), 10);
@@ -14,4 +16,5 @@ $(document).ready(function () {
       bottom: footerOffset
     }
   });
-});
+//});
+}

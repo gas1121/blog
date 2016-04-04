@@ -1,6 +1,8 @@
 /* global NexT: true */
 
-$(document).ready(function () {
+//$(document).ready(function () {
+$(document).ready(bootstrap);
+function bootstrap() {
 
   $(document).trigger('bootstrap:before');
 
@@ -21,12 +23,12 @@ $(document).ready(function () {
       $siteNav[animateCallback](ON_CLASS_NAME);
     });
   });
-
+  
 
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  NexT.utils.embeddedVideoTransformer();
+  //disable functin call when in ajax
+  (!CONFIG.in_ajax) && NexT.utils.embeddedVideoTransformer();
   NexT.utils.addActiveClassToMenuItem();
-
 
   // Define Motion Sequence.
   NexT.motion.integrator
@@ -41,4 +43,5 @@ $(document).ready(function () {
   CONFIG.motion && NexT.motion.integrator.bootstrap();
 
   $(document).trigger('bootstrap:after');
-});
+//});
+}

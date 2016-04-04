@@ -2,7 +2,10 @@
 <script type="text/javascript" src="{{ url_for(theme.js) }}/src/scrollspy.js?v={{ theme.version }}"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
+  //$(document).ready(function () {
+  $(document).ready(sidebarTocHighlight);
+  function sidebarTocHighlight() {
+  //
     var tocSelector = '.post-toc';
     var $tocSelector = $(tocSelector);
     var activeCurrentSelector = '.active-current';
@@ -89,11 +92,14 @@
         }, 100);
     }
 
-  });
+  //});
+  }
 </script>
 
 <script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
+  //$(document).ready(function () {
+  $(document).ready(sidebarNav);
+  function sidebarNav() {
     var html = $('html');
     var TAB_ANIMATE_DURATION = 200;
     var hasVelocity = $.isFunction(html.velocity);
@@ -155,5 +161,6 @@
         }
       }
     };
-  });
+  //});
+  }
 </script>

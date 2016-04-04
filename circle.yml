@@ -1,6 +1,6 @@
 deployment:
   production:
-    branch: master
+    branch: [master, vue-spa-develop]
     commands:
       - git config --global user.name "gas1121"
       - git config --global user.email "jtdzhx@gmail.com"

@@ -1,17 +1,16 @@
 /// <reference path="../../../../../typings/main.d.ts" />
 
 //TODO fix d.ts file include path
-//TODO add variable to judge if use spa mode and include vue files
-//TODO replace content div when click link
 //TODO make code pretty
 //TODO follow es2015 coding pattern
 //TODO add test and comment
-//TODO solve load animation problem(motion.js)
 //TODO title name differs with different address
 //TODO use promise to replace callback
+//TODO close menu motion
+//TODO menu highlight error
 
 //Register and start router
-page('*', ReplaceHtmlData);
+page('/(.*)', ReplaceHtmlData);
 page({
     dispatch:false
 });
@@ -21,29 +20,36 @@ function ReplaceHtmlData(context) {
     console.log(context.path);
     Vue.http.get(context.path).then(function (response) {
         let receivedHTML = $('<div/>').append(response.data);
+        $('.sidebar-inner').replaceWith(receivedHTML.find('.sidebar-inner'));
         $('#content').fadeOut("slow", function() {
             $(this).replaceWith(receivedHTML.find('#content'));
             $('#content').fadeIn("slow", function() {
-                //TODO year slide in animation is just a patch now
-                $('.archive-year').velocity(
-                    'transition.slideLeftIn',
-                    {
-                        stagger: 50,
-                        drag: true
-                    }
-                );
-                //Setting for post animation
-                let postAnimationTrigger = {}
-                $.extend(postAnimationTrigger,NexT.motion.integrator);
-                postAnimationTrigger.queue = [];
-                postAnimationTrigger.cursor = -1;
-                //postAnimationTrigger.add(NexT.motion.middleWares.menu);
-                postAnimationTrigger.add(NexT.motion.middleWares.postList);
-                CONFIG.motion && postAnimationTrigger.bootstrap();
-                $(document).trigger('bootstrap:after');
+                Reboot();
             });
         })
     }, function (response) {
         // error callback
     });
+}
+
+//TODO select motion by page type
+//TODO post-details.swig only exists in some pages
+function Reboot() {
+    //viaibale to identify spa mode
+    CONFIG.in_ajax = true;
+
+    console.log("motion.js");
+    motion();
+    console.log("pisces.js");
+    //from pisces.js
+    pisces();
+    //from archive.swig
+    $('.archive-year').velocity('transition.slideLeftIn');
+    //from post-details.js(post-details.swig)
+    console.log("post-details.swig");
+    sidebarTocHighlight();
+    sidebarNav();
+    //from bootstrap.js
+    console.log("bootstrap.js");
+    bootstrap();
 }
