@@ -53,9 +53,9 @@
     </div>
     {# netease cloud music #}
     {% if theme.netease_cloud_music %}
+      <link href="{{ url_for(theme.css) }}/custom/netease-cloud-music.css" rel="stylesheet" type="text/css" />
       <div id="netease-cloud-music">
-        {# <embed src="http://music.163.com/style/swf/widget.swf?sid=133104594&type=0&auto=1&width=310&height=430" width="330" height="450"  allowNetworking="all"></embed> #}
-        <iframe id="netease-cloud-music-player" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="http://music.163.com/outchain/player?type=0&id=133104594&auto=1&height=430"></iframe>
+        <iframe id="netease-cloud-music-player" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=133104594&auto=1&height=90"></iframe>
       </div>
     {% endif %}
   </div>

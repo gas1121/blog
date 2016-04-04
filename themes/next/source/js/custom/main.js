@@ -19,6 +19,8 @@ function ReplaceHtmlData(context) {
     console.log(context);
     console.log(context.path);
     Vue.http.get(context.path).then(function (response) {
+        var path = window.location.pathname;
+        console.log(path);
         let receivedHTML = $('<div/>').append(response.data);
         $('.sidebar-inner').replaceWith(receivedHTML.find('.sidebar-inner'));
         $('#content').fadeOut("slow", function() {
