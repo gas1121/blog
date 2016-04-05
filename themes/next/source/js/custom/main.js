@@ -48,8 +48,11 @@ function Reboot() {
     pisces();
     //from archive.swig
     $('.archive-year').velocity('transition.slideLeftIn');
-    //from post-details.js(post-details.swig)
-    sidebarTocHighlight();
+    //from post-details.js
+    initScrollSpy();
+    NexT.utils.needAffix() && initAffix();
+    initTOCDimension();
+
     sidebarNav();
     //from bootstrap.js
     bootstrap();

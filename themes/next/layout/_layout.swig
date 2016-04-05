@@ -36,7 +36,7 @@
           {% include '_partials/duoshuo-hot-articles.swig' %}
           {% include '_partials/comments.swig' %}
         </div>
-        {% if theme.sidebar !== 'remove' %}
+        {% if theme.sidebar.display !== 'remove' %}
           {% block sidebar %}{% endblock %}
         {% endif %}
       </div>
@@ -86,7 +86,7 @@
     <script type="text/javascript" src="http://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js" charset="utf-8"></script>
     {# post-details spa support #}    
     <script type="text/javascript" src="{{ url_for(theme.js) }}/src/scrollspy.js?v={{ theme.version }}"></script>
-    <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/post-details.js" charset="utf-8"></script>    
+    <script type="text/javascript" src="{{ url_for(theme.js) }}/src/post-details.js" charset="utf-8"></script>    
     <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/main.js" charset="utf-8"></script>
   {% endif %}
 </body>
