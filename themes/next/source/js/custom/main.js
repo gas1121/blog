@@ -49,9 +49,7 @@ function Reboot() {
     //from archive.swig
     $('.archive-year').velocity('transition.slideLeftIn');
     //from post-details.js
-    initScrollSpy();
-    NexT.utils.needAffix() && initAffix();
-    initTOCDimension();
+    sidebarTocHighlight();
 
     sidebarNav();
     //from bootstrap.js

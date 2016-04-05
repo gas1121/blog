@@ -1,6 +1,8 @@
 /* global NexT: true */
 
-$(document).ready(function () {
+//$(document).ready(function () {
+$(document).ready(sidebarTocHighlight);
+function sidebarTocHighlight() {
 
   initScrollSpy();
   NexT.utils.needAffix() && initAffix();
@@ -71,8 +73,8 @@ $(document).ready(function () {
     height = height || 'auto';
     $('.post-toc').css('max-height', height);
   }
-
-});
+}
+//});
 
 $(document).ready(sidebarNav);
 function sidebarNav() {
