@@ -9,7 +9,6 @@
 //spa mode problem
 //TODO select motion by page type
 //TODO post-details.swig only exists in some pages
-//TODO title name differs with different address
 //TODO sidebar scroll stay effect don't work
 
 //music player problem
@@ -22,11 +21,13 @@ page({
 });
 
 function ReplaceHtmlData(context) {
-    console.log(context);
-    console.log(context.path);
     Vue.http.get(context.path).then(function (response) {
         let receivedHTML = $('<div/>').append(response.data);
+        //change title
+        document.title = receivedHTML.find('title')[0].textContent
+        //change sidebar
         $('.sidebar-inner').replaceWith(receivedHTML.find('.sidebar-inner'));
+        //change content
         $('#content').fadeOut("slow", function() {
             $(this).replaceWith(receivedHTML.find('#content'));
             $('#content').fadeIn("slow", function() {
@@ -42,18 +43,14 @@ function Reboot() {
     //viaibale to identify spa mode
     CONFIG.in_ajax = true;
 
-    console.log("motion.js");
     motion();
-    console.log("pisces.js");
     //from pisces.js
     pisces();
     //from archive.swig
     $('.archive-year').velocity('transition.slideLeftIn');
     //from post-details.js(post-details.swig)
-    console.log("post-details.swig");
     sidebarTocHighlight();
     sidebarNav();
     //from bootstrap.js
-    console.log("bootstrap.js");
     bootstrap();
 }

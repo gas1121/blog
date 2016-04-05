@@ -128,10 +128,8 @@ NexT.utils = NexT.$u = {
    */
   addActiveClassToMenuItem: function () {
     var path = window.location.pathname;
-    console.log("addActiveClassToMenuItem");
-    console.log(path);
+    //deal with path not ending with '/'
     path = path === '/' ? path : this.removeTrailingSlash(path);
-    console.log(path);
     $('.menu-item a[href="' + path + '"]').parent().addClass('menu-item-active');
   },
   
