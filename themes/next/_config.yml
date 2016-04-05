@@ -263,4 +263,9 @@ version: 0.5.0
 spa_mode: true
 
 # netease cloud music
-netease_cloud_music: true
+netease_cloud_music: 
+  enable: true
+  type: list # song
+  music_id: 133104594
+  auto: false
+  

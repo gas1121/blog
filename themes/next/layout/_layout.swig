@@ -52,10 +52,11 @@
       <i class="fa fa-arrow-up"></i>
     </div>
     {# netease cloud music #}
-    {% if theme.netease_cloud_music %}
+    {% if theme.netease_cloud_music.enable %}
+      {% set music_info = theme.netease_cloud_music %}
       <link href="{{ url_for(theme.css) }}/custom/netease-cloud-music.css" rel="stylesheet" type="text/css" />
       <div id="netease-cloud-music">
-        <iframe id="netease-cloud-music-player" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=133104594&auto=1&height=90"></iframe>
+        <iframe id="netease-cloud-music-player" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type={{ {'list':0,'song':2}[music_info.type] }}&id={{ music_info.music_id }}&auto={{ {true:1,false:0}[music_info.auto] }}&height=90"></iframe>
       </div>
     {% endif %}
   </div>
