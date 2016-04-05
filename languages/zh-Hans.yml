@@ -2,6 +2,7 @@ title:
   archive: 归档
   category: 分类
   tag: 标签
+  lab: 实验室
 
 author: 博主
 
@@ -11,6 +12,7 @@ menu:
   categories: 分类
   tags: 标签
   about: 关于
+  lab: 实验室
   search: 搜索
   commonweal: 公益404
 
