@@ -7,9 +7,6 @@
 //TODO use promise to replace callback
 
 //spa mode problem
-//TODO select motion by page type
-//TODO post-details.swig only exists in some pages
-//TODO sidebar scroll stay effect don't work
 
 //music player problem
 //TODO music player size and position
@@ -31,7 +28,14 @@ function ReplaceHtmlData(context) {
         $('#content').fadeOut("slow", function() {
             $(this).replaceWith(receivedHTML.find('#content'));
             $('#content').fadeIn("slow", function() {
-                Reboot();
+                let pageType = "normal";
+                if (receivedHTML.find('.page-post-detail').length>0) {
+                    pageType = "postDetail";
+                }
+                else if (receivedHTML.find('.page-archive').length>0) {
+                    pageType = "archives"
+                }
+                Reboot(pageType);
             });
         })
     }, function (response) {
@@ -39,19 +43,23 @@ function ReplaceHtmlData(context) {
     });
 }
 
-function Reboot() {
+function Reboot(pageType) {
     //viaibale to identify spa mode
     CONFIG.in_ajax = true;
 
     motion();
     //from pisces.js
     pisces();
-    //from archive.swig
-    $('.archive-year').velocity('transition.slideLeftIn');
-    //from post-details.js
-    sidebarTocHighlight();
-
-    sidebarNav();
+    if (pageType === "archives") {
+        //from archive.swig
+        $('.archive-year').velocity('transition.slideLeftIn');   
+    }
+    if (pageType === "postDetail") {
+        //from post-details.js
+        sidebarTocHighlight();
+        sidebarNav();
+    }
+    
     //from bootstrap.js
     bootstrap();
 }

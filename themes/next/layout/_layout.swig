@@ -86,7 +86,7 @@
     <script type="text/javascript" src="http://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js" charset="utf-8"></script>
     {# post-details spa support #}    
     <script type="text/javascript" src="{{ url_for(theme.js) }}/src/scrollspy.js?v={{ theme.version }}"></script>
-    <script type="text/javascript" src="{{ url_for(theme.js) }}/src/post-details.js?v={{ theme.version }}" charset="utf-8"></script>    
+    <script type="text/javascript" src="{{ url_for(theme.js) }}/src/post-details-functions.js?v={{ theme.version }}" charset="utf-8"></script>    
     <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/main.js" charset="utf-8"></script>
   {% endif %}
 </body>
