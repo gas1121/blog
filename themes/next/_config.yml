@@ -280,8 +280,8 @@ spa_mode: true
 
 # netease cloud music
 netease_cloud_music: 
-  enable: true
+  enable: false
   type: list # song
-  music_id: 133104594
+  music_id: 1590095
   auto: false
   
