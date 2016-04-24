@@ -64,6 +64,10 @@
   <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}" />
 {% endif %}
 
+{% if theme.spa_mode %}
+  {# spa mode header js file #}    
+  <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/build/preHeader.bundle.js" charset="utf-8"></script>
+{% endif %}
 
 {{
   open_graph({

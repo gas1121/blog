@@ -79,15 +79,12 @@
   {% include '_scripts/baidu-push.swig' %}
   
   {% if theme.spa_mode %}
-    {# single page app support #}
-    <script type="text/javascript" src="http://cdn.bootcss.com/page.js/1.6.4/page.js" charset="utf-8"></script>
-    <script type="text/javascript" src="http://cdn.bootcss.com/vue/1.0.17/vue.js" charset="utf-8"></script>
-    <script type="text/javascript" src="http://cdn.bootcss.com/vue-router/0.7.11/vue-router.js" charset="utf-8"></script>
-    <script type="text/javascript" src="http://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js" charset="utf-8"></script>
     {# post-details spa support #}    
     <script type="text/javascript" src="{{ url_for(theme.js) }}/src/scrollspy.js?v={{ theme.version }}"></script>
     <script type="text/javascript" src="{{ url_for(theme.js) }}/src/post-details-functions.js?v={{ theme.version }}" charset="utf-8"></script>    
-    <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/main.js" charset="utf-8"></script>
+    {# must use page.min.js otherwise won't work #}
+    <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/library/page.js/page.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for(theme.js) }}/custom/build/main.bundle.js" charset="utf-8"></script>
   {% endif %}
 </body>
 </html>
