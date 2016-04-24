@@ -59,7 +59,14 @@
 
 	var _vue2 = _interopRequireDefault(_vue);
 
+	__webpack_require__(325);
+
+	__webpack_require__(329);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//TODO solve path problem
+
 
 	//dynamic data managed by Vue
 	var starHistoryGraphComponent = _vue2.default.extend({
@@ -33502,6 +33509,400 @@
 
 	nv.version = "1.8.2";
 	})();
+
+/***/ },
+
+/***/ 325:
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(326);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(328)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../css-loader/index.js!./nv.d3.css", function() {
+				var newContent = require("!!./../../css-loader/index.js!./nv.d3.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 326:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(327)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/* nvd3 version 1.8.2 (https://github.com/novus/nvd3) 2016-01-24 */\n.nvd3 .nv-axis {\r\n    pointer-events:none;\r\n    opacity: 1;\r\n}\r\n\r\n.nvd3 .nv-axis path {\r\n    fill: none;\r\n    stroke: #000;\r\n    stroke-opacity: .75;\r\n    shape-rendering: crispEdges;\r\n}\r\n\r\n.nvd3 .nv-axis path.domain {\r\n    stroke-opacity: .75;\r\n}\r\n\r\n.nvd3 .nv-axis.nv-x path.domain {\r\n    stroke-opacity: 0;\r\n}\r\n\r\n.nvd3 .nv-axis line {\r\n    fill: none;\r\n    stroke: #e5e5e5;\r\n    shape-rendering: crispEdges;\r\n}\r\n\r\n.nvd3 .nv-axis .zero line,\r\n    /*this selector may not be necessary*/ .nvd3 .nv-axis line.zero {\r\n    stroke-opacity: .75;\r\n}\r\n\r\n.nvd3 .nv-axis .nv-axisMaxMin text {\r\n    font-weight: bold;\r\n}\r\n\r\n.nvd3 .x  .nv-axis .nv-axisMaxMin text,\r\n.nvd3 .x2 .nv-axis .nv-axisMaxMin text,\r\n.nvd3 .x3 .nv-axis .nv-axisMaxMin text {\r\n    text-anchor: middle\r\n}\r\n\r\n.nvd3 .nv-axis.nv-disabled {\r\n    opacity: 0;\r\n}\r\n\n.nvd3 .nv-bars rect {\r\n    fill-opacity: .75;\r\n\r\n    transition: fill-opacity 250ms linear;\r\n    -moz-transition: fill-opacity 250ms linear;\r\n    -webkit-transition: fill-opacity 250ms linear;\r\n}\r\n\r\n.nvd3 .nv-bars rect.hover {\r\n    fill-opacity: 1;\r\n}\r\n\r\n.nvd3 .nv-bars .hover rect {\r\n    fill: lightblue;\r\n}\r\n\r\n.nvd3 .nv-bars text {\r\n    fill: rgba(0,0,0,0);\r\n}\r\n\r\n.nvd3 .nv-bars .hover text {\r\n    fill: rgba(0,0,0,1);\r\n}\r\n\r\n.nvd3 .nv-multibar .nv-groups rect,\r\n.nvd3 .nv-multibarHorizontal .nv-groups rect,\r\n.nvd3 .nv-discretebar .nv-groups rect {\r\n    stroke-opacity: 0;\r\n\r\n    transition: fill-opacity 250ms linear;\r\n    -moz-transition: fill-opacity 250ms linear;\r\n    -webkit-transition: fill-opacity 250ms linear;\r\n}\r\n\r\n.nvd3 .nv-multibar .nv-groups rect:hover,\r\n.nvd3 .nv-multibarHorizontal .nv-groups rect:hover,\r\n.nvd3 .nv-candlestickBar .nv-ticks rect:hover,\r\n.nvd3 .nv-discretebar .nv-groups rect:hover {\r\n    fill-opacity: 1;\r\n}\r\n\r\n.nvd3 .nv-discretebar .nv-groups text,\r\n.nvd3 .nv-multibarHorizontal .nv-groups text {\r\n    font-weight: bold;\r\n    fill: rgba(0,0,0,1);\r\n    stroke: rgba(0,0,0,0);\r\n}\r\n\n/* boxplot CSS */\n.nvd3 .nv-boxplot circle {\n  fill-opacity: 0.5;\n}\n\n.nvd3 .nv-boxplot circle:hover {\n  fill-opacity: 1;\n}\n\n.nvd3 .nv-boxplot rect:hover {\n  fill-opacity: 1;\n}\n\n.nvd3 line.nv-boxplot-median {\n  stroke: black;\n}\n\n.nv-boxplot-tick:hover {\n  stroke-width: 2.5px;\n}\n/* bullet */\r\n.nvd3.nv-bullet { font: 10px sans-serif; }\r\n.nvd3.nv-bullet .nv-measure { fill-opacity: .8; }\r\n.nvd3.nv-bullet .nv-measure:hover { fill-opacity: 1; }\r\n.nvd3.nv-bullet .nv-marker { stroke: #000; stroke-width: 2px; }\r\n.nvd3.nv-bullet .nv-markerTriangle { stroke: #000; fill: #fff; stroke-width: 1.5px; }\r\n.nvd3.nv-bullet .nv-tick line { stroke: #666; stroke-width: .5px; }\r\n.nvd3.nv-bullet .nv-range.nv-s0 { fill: #eee; }\r\n.nvd3.nv-bullet .nv-range.nv-s1 { fill: #ddd; }\r\n.nvd3.nv-bullet .nv-range.nv-s2 { fill: #ccc; }\r\n.nvd3.nv-bullet .nv-title { font-size: 14px; font-weight: bold; }\r\n.nvd3.nv-bullet .nv-subtitle { fill: #999; }\r\n\r\n\r\n.nvd3.nv-bullet .nv-range {\r\n    fill: #bababa;\r\n    fill-opacity: .4;\r\n}\r\n.nvd3.nv-bullet .nv-range:hover {\r\n    fill-opacity: .7;\r\n}\r\n\n.nvd3.nv-candlestickBar .nv-ticks .nv-tick {\r\n    stroke-width: 1px;\r\n}\r\n\r\n.nvd3.nv-candlestickBar .nv-ticks .nv-tick.hover {\r\n    stroke-width: 2px;\r\n}\r\n\r\n.nvd3.nv-candlestickBar .nv-ticks .nv-tick.positive rect {\r\n    stroke: #2ca02c;\r\n    fill: #2ca02c;\r\n}\r\n\r\n.nvd3.nv-candlestickBar .nv-ticks .nv-tick.negative rect {\r\n    stroke: #d62728;\r\n    fill: #d62728;\r\n}\r\n\r\n.with-transitions .nv-candlestickBar .nv-ticks .nv-tick {\r\n    transition: stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n    -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n    -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n\r\n}\r\n\r\n.nvd3.nv-candlestickBar .nv-ticks line {\r\n    stroke: #333;\r\n}\r\n\r\n\n.nvd3 .nv-legend .nv-disabled rect {\n    /*fill-opacity: 0;*/\n}\n\n.nvd3 .nv-check-box .nv-box {\n    fill-opacity:0;\n    stroke-width:2;\n}\n\n.nvd3 .nv-check-box .nv-check {\n    fill-opacity:0;\n    stroke-width:4;\n}\n\n.nvd3 .nv-series.nv-disabled .nv-check-box .nv-check {\n    fill-opacity:0;\n    stroke-opacity:0;\n}\n\n.nvd3 .nv-controlsWrap .nv-legend .nv-check-box .nv-check {\n    opacity: 0;\n}\n\n/* line plus bar */\r\n.nvd3.nv-linePlusBar .nv-bar rect {\r\n    fill-opacity: .75;\r\n}\r\n\r\n.nvd3.nv-linePlusBar .nv-bar rect:hover {\r\n    fill-opacity: 1;\r\n}\n.nvd3 .nv-groups path.nv-line {\r\n    fill: none;\r\n}\r\n\r\n.nvd3 .nv-groups path.nv-area {\r\n    stroke: none;\r\n}\r\n\r\n.nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {\r\n    fill-opacity: 0;\r\n    stroke-opacity: 0;\r\n}\r\n\r\n.nvd3.nv-scatter.nv-single-point .nv-groups .nv-point {\r\n    fill-opacity: .5 !important;\r\n    stroke-opacity: .5 !important;\r\n}\r\n\r\n\r\n.with-transitions .nvd3 .nv-groups .nv-point {\r\n    transition: stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n    -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n    -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n\r\n}\r\n\r\n.nvd3.nv-scatter .nv-groups .nv-point.hover,\r\n.nvd3 .nv-groups .nv-point.hover {\r\n    stroke-width: 7px;\r\n    fill-opacity: .95 !important;\r\n    stroke-opacity: .95 !important;\r\n}\r\n\r\n\r\n.nvd3 .nv-point-paths path {\r\n    stroke: #aaa;\r\n    stroke-opacity: 0;\r\n    fill: #eee;\r\n    fill-opacity: 0;\r\n}\r\n\r\n\r\n\r\n.nvd3 .nv-indexLine {\r\n    cursor: ew-resize;\r\n}\r\n\n/********************\r\n * SVG CSS\r\n */\r\n\r\n/********************\r\n  Default CSS for an svg element nvd3 used\r\n*/\r\nsvg.nvd3-svg {\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -ms-user-select: none;\r\n    -moz-user-select: none;\r\n    user-select: none;\r\n    display: block;\r\n    width:100%;\r\n    height:100%;\r\n}\r\n\r\n/********************\r\n  Box shadow and border radius styling\r\n*/\r\n.nvtooltip.with-3d-shadow, .with-3d-shadow .nvtooltip {\r\n    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);\r\n    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);\r\n    box-shadow: 0 5px 10px rgba(0,0,0,.2);\r\n\r\n    -webkit-border-radius: 5px;\r\n    -moz-border-radius: 5px;\r\n    border-radius: 5px;\r\n}\r\n\r\n\r\n.nvd3 text {\r\n    font: normal 12px Arial;\r\n}\r\n\r\n.nvd3 .title {\r\n    font: bold 14px Arial;\r\n}\r\n\r\n.nvd3 .nv-background {\r\n    fill: white;\r\n    fill-opacity: 0;\r\n}\r\n\r\n.nvd3.nv-noData {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n}\r\n\r\n\r\n/**********\r\n*  Brush\r\n*/\r\n\r\n.nv-brush .extent {\r\n    fill-opacity: .125;\r\n    shape-rendering: crispEdges;\r\n}\r\n\r\n.nv-brush .resize path {\r\n    fill: #eee;\r\n    stroke: #666;\r\n}\r\n\r\n\r\n/**********\r\n*  Legend\r\n*/\r\n\r\n.nvd3 .nv-legend .nv-series {\r\n    cursor: pointer;\r\n}\r\n\r\n.nvd3 .nv-legend .nv-disabled circle {\r\n    fill-opacity: 0;\r\n}\r\n\r\n/* focus */\r\n.nvd3 .nv-brush .extent {\r\n    fill-opacity: 0 !important;\r\n}\r\n\r\n.nvd3 .nv-brushBackground rect {\r\n    stroke: #000;\r\n    stroke-width: .4;\r\n    fill: #fff;\r\n    fill-opacity: .7;\r\n}\r\n\r\n\n.nvd3.nv-ohlcBar .nv-ticks .nv-tick {\r\n    stroke-width: 1px;\r\n}\r\n\r\n.nvd3.nv-ohlcBar .nv-ticks .nv-tick.hover {\r\n    stroke-width: 2px;\r\n}\r\n\r\n.nvd3.nv-ohlcBar .nv-ticks .nv-tick.positive {\r\n    stroke: #2ca02c;\r\n}\r\n\r\n.nvd3.nv-ohlcBar .nv-ticks .nv-tick.negative {\r\n    stroke: #d62728;\r\n}\r\n\r\n\n.nvd3 .background path {\r\n    fill: none;\r\n    stroke: #EEE;\r\n    stroke-opacity: .4;\r\n    shape-rendering: crispEdges;\r\n}\r\n\r\n.nvd3 .foreground path {\r\n    fill: none;\r\n    stroke-opacity: .7;\r\n}\r\n\r\n.nvd3 .nv-parallelCoordinates-brush .extent \r\n{\r\n    fill: #fff;\r\n    fill-opacity: .6;\r\n    stroke: gray;\r\n    shape-rendering: crispEdges;\r\n}\r\n\r\n.nvd3 .nv-parallelCoordinates .hover  {\r\n    fill-opacity: 1;\r\n\tstroke-width: 3px;\r\n}\r\n\r\n\r\n.nvd3 .missingValuesline line {\r\n  fill: none;\r\n  stroke: black;\r\n  stroke-width: 1;\r\n  stroke-opacity: 1;\r\n  stroke-dasharray: 5, 5; \r\n}\n.nvd3.nv-pie path {\r\n    stroke-opacity: 0;\r\n    transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n    -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n    -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;\r\n\r\n}\r\n\r\n.nvd3.nv-pie .nv-pie-title {\r\n    font-size: 24px;\r\n    fill: rgba(19, 196, 249, 0.59);\r\n}\r\n\r\n.nvd3.nv-pie .nv-slice text {\r\n    stroke: #000;\r\n    stroke-width: 0;\r\n}\r\n\r\n.nvd3.nv-pie path {\r\n    stroke: #fff;\r\n    stroke-width: 1px;\r\n    stroke-opacity: 1;\r\n}\r\n\r\n.nvd3.nv-pie path {\r\n    fill-opacity: .7;\r\n}\r\n.nvd3.nv-pie .hover path {\r\n    fill-opacity: 1;\r\n}\r\n.nvd3.nv-pie .nv-label {\r\n    pointer-events: none;\r\n}\r\n.nvd3.nv-pie .nv-label rect {\r\n    fill-opacity: 0;\r\n    stroke-opacity: 0;\r\n}\r\n\n/* scatter */\r\n.nvd3 .nv-groups .nv-point.hover {\r\n    stroke-width: 20px;\r\n    stroke-opacity: .5;\r\n}\r\n\r\n.nvd3 .nv-scatter .nv-point.hover {\r\n    fill-opacity: 1;\r\n}\r\n.nv-noninteractive {\r\n    pointer-events: none;\r\n}\r\n\r\n.nv-distx, .nv-disty {\r\n    pointer-events: none;\r\n}\r\n\n/* sparkline */\r\n.nvd3.nv-sparkline path {\r\n    fill: none;\r\n}\r\n\r\n.nvd3.nv-sparklineplus g.nv-hoverValue {\r\n    pointer-events: none;\r\n}\r\n\r\n.nvd3.nv-sparklineplus .nv-hoverValue line {\r\n    stroke: #333;\r\n    stroke-width: 1.5px;\r\n}\r\n\r\n.nvd3.nv-sparklineplus,\r\n.nvd3.nv-sparklineplus g {\r\n    pointer-events: all;\r\n}\r\n\r\n.nvd3 .nv-hoverArea {\r\n    fill-opacity: 0;\r\n    stroke-opacity: 0;\r\n}\r\n\r\n.nvd3.nv-sparklineplus .nv-xValue,\r\n.nvd3.nv-sparklineplus .nv-yValue {\r\n    stroke-width: 0;\r\n    font-size: .9em;\r\n    font-weight: normal;\r\n}\r\n\r\n.nvd3.nv-sparklineplus .nv-yValue {\r\n    stroke: #f66;\r\n}\r\n\r\n.nvd3.nv-sparklineplus .nv-maxValue {\r\n    stroke: #2ca02c;\r\n    fill: #2ca02c;\r\n}\r\n\r\n.nvd3.nv-sparklineplus .nv-minValue {\r\n    stroke: #d62728;\r\n    fill: #d62728;\r\n}\r\n\r\n.nvd3.nv-sparklineplus .nv-currentValue {\r\n    font-weight: bold;\r\n    font-size: 1.1em;\r\n}\n/* stacked area */\r\n.nvd3.nv-stackedarea path.nv-area {\r\n    fill-opacity: .7;\r\n    stroke-opacity: 0;\r\n    transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;\r\n    -moz-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;\r\n    -webkit-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;\r\n}\r\n\r\n.nvd3.nv-stackedarea path.nv-area.hover {\r\n    fill-opacity: .9;\r\n}\r\n\r\n\r\n.nvd3.nv-stackedarea .nv-groups .nv-point {\r\n    stroke-opacity: 0;\r\n    fill-opacity: 0;\r\n}\n\r\n\r\n.nvtooltip {\r\n    position: absolute;\r\n    background-color: rgba(255,255,255,1.0);\r\n    color: rgba(0,0,0,1.0);\r\n    padding: 1px;\r\n    border: 1px solid rgba(0,0,0,.2);\r\n    z-index: 10000;\r\n    display: block;\r\n\r\n    font-family: Arial;\r\n    font-size: 13px;\r\n    text-align: left;\r\n    pointer-events: none;\r\n\r\n    white-space: nowrap;\r\n\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.nvtooltip {\r\n    background: rgba(255,255,255, 0.8);\r\n    border: 1px solid rgba(0,0,0,0.5);\r\n    border-radius: 4px;\r\n}\r\n\r\n/*Give tooltips that old fade in transition by\r\n    putting a \"with-transitions\" class on the container div.\r\n*/\r\n.nvtooltip.with-transitions, .with-transitions .nvtooltip {\r\n    transition: opacity 50ms linear;\r\n    -moz-transition: opacity 50ms linear;\r\n    -webkit-transition: opacity 50ms linear;\r\n\r\n    transition-delay: 200ms;\r\n    -moz-transition-delay: 200ms;\r\n    -webkit-transition-delay: 200ms;\r\n}\r\n\r\n.nvtooltip.x-nvtooltip,\r\n.nvtooltip.y-nvtooltip {\r\n    padding: 8px;\r\n}\r\n\r\n.nvtooltip h3 {\r\n    margin: 0;\r\n    padding: 4px 14px;\r\n    line-height: 18px;\r\n    font-weight: normal;\r\n    background-color: rgba(247,247,247,0.75);\r\n    color: rgba(0,0,0,1.0);\r\n    text-align: center;\r\n\r\n    border-bottom: 1px solid #ebebeb;\r\n\r\n    -webkit-border-radius: 5px 5px 0 0;\r\n    -moz-border-radius: 5px 5px 0 0;\r\n    border-radius: 5px 5px 0 0;\r\n}\r\n\r\n.nvtooltip p {\r\n    margin: 0;\r\n    padding: 5px 14px;\r\n    text-align: center;\r\n}\r\n\r\n.nvtooltip span {\r\n    display: inline-block;\r\n    margin: 2px 0;\r\n}\r\n\r\n.nvtooltip table {\r\n    margin: 6px;\r\n    border-spacing:0;\r\n}\r\n\r\n\r\n.nvtooltip table td {\r\n    padding: 2px 9px 2px 0;\r\n    vertical-align: middle;\r\n}\r\n\r\n.nvtooltip table td.key {\r\n    font-weight: normal;\r\n}\r\n.nvtooltip table td.key.total {\r\n    font-weight: bold;\r\n}\r\n.nvtooltip table td.value {\r\n    text-align: right;\r\n    font-weight: bold;\r\n}\r\n\r\n.nvtooltip table tr.highlight td {\r\n    padding: 1px 9px 1px 0;\r\n    border-bottom-style: solid;\r\n    border-bottom-width: 1px;\r\n    border-top-style: solid;\r\n    border-top-width: 1px;\r\n}\r\n\r\n.nvtooltip table td.legend-color-guide div {\r\n    width: 8px;\r\n    height: 8px;\r\n    vertical-align: middle;\r\n}\r\n\r\n.nvtooltip table td.legend-color-guide div {\r\n    width: 12px;\r\n    height: 12px;\r\n    border: 1px solid #999;\r\n}\r\n\r\n.nvtooltip .footer {\r\n    padding: 3px;\r\n    text-align: center;\r\n}\r\n\r\n.nvtooltip-pending-removal {\r\n    pointer-events: none;\r\n    display: none;\r\n}\r\n\r\n\r\n/****\r\nInteractive Layer\r\n*/\r\n.nvd3 .nv-interactiveGuideLine {\r\n    pointer-events:none;\r\n}\r\n.nvd3 line.nv-guideline {\r\n    stroke: #ccc;\r\n}\r\n", ""]);
+
+	// exports
+
+
+/***/ },
+
+/***/ 327:
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+
+/***/ 328:
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+
+/***/ 329:
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(330);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(328)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./star-history.css", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./star-history.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 330:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(327)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "svg {\r\n    display: block;\r\n}\r\n\r\n#chart,\r\nsvg {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin: auto;\r\n    padding-left: auto;\r\n    padding-right: auto;\r\n    padding-right: auto;\r\n}", ""]);
+
+	// exports
+
 
 /***/ }
 

@@ -1,5 +1,4 @@
 module.exports = {
-    //context: __dirname + "/themes/next/source/js/custom",
     entry: {
         preHeader : "./themes/next/source/js/custom/pre-header.js",
         main : "./themes/next/source/js/custom/main.js",
@@ -13,7 +12,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.css$/, loader: "style!css"}
+            { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
     }
 }

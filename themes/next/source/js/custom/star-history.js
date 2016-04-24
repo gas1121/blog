@@ -1,6 +1,9 @@
 import d3 from "d3";
 import nv from "nvd3";
 import Vue from "vue";
+import "nvd3/build/nv.d3.css"
+//TODO solve path problem
+import "../../css/custom/star-history.css"
 
 //dynamic data managed by Vue
 let starHistoryGraphComponent = Vue.extend({
