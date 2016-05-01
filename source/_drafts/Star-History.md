@@ -8,9 +8,6 @@ categories:
 Star History
 <!-- more -->
 {% raw %}
-<div id="chart">
-    <svg></svg>
-</div>
-<star-history-graph-component></star-history-graph-component>
+<star-history-component></star-history-component>
 <script src="/js/custom/build/starHistory.bundle.js"></script>
 {% endraw %}
