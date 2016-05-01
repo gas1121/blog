@@ -15,6 +15,7 @@ import Vue from "vue"
 import VueResource from "vue-resource"
 import "nvd3/build/nv.d3.css"
 
+//TODO config server
 //TODO error message
 //TODO filter same repo
 export default {
