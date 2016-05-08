@@ -1,5 +1,5 @@
 <template>
-    {{ errorMessage }}
+    {{ errorMessage }}<br/>
     Input repo name:
     <input type="text" placeholder="{{ defaultRepo }}" v-model="searchRepo">
     <button class="btn" v-on:click="SearchStarHistory">Search</button>
@@ -43,7 +43,7 @@ export default {
                 update_star_history_graph(this.repoData);
             }).catch((response) => {
                 console.log(response);
-                this.errorMessage = "Can't get data.{{{<br>}}}";
+                this.errorMessage = "Can't get data.";
             });
         }
     }
@@ -51,11 +51,11 @@ export default {
 
 function get_data_from_json(json_data) {
     return {
-        key: json_data['key'],
-        values: json_data['values'].map((item) => {
+        key: json_data['repo_name'],
+        values: json_data['history_data'].map((item) => {
             return {
-                x: new Date(item.x),
-                y: Number(item.y)
+                x: new Date(item.date),
+                y: Number(item.count)
             }
         })
     }

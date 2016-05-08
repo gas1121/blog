@@ -57,9 +57,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//TODO solve path problem
-	//import "../../css/custom/star-history.css"
-
 	//dynamic data managed by Vue
 	//Vue.component('star-history-component', StarHistoryView);
 	var starHistoryComponent = _vue2.default.extend(_starHistory2.default);
@@ -12160,11 +12157,11 @@
 
 	function get_data_from_json(json_data) {
 	    return {
-	        key: json_data['key'],
-	        values: json_data['values'].map(function (item) {
+	        key: json_data['repo_name'],
+	        values: json_data['history_data'].map(function (item) {
 	            return {
-	                x: new Date(item.x),
-	                y: Number(item.y)
+	                x: new Date(item.date),
+	                y: Number(item.count)
 	            };
 	        })
 	    };
