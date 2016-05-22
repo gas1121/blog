@@ -12136,7 +12136,7 @@
 	            var _this = this;
 
 	            var searchRepo = this.searchRepo ? this.searchRepo : this.defaultRepo;
-	            var serverAddress = 'http://127.0.0.1:5000/api/starhistory/1.0/';
+	            var serverAddress = 'http://133.130.99.202/api/starhistory/1.0/';
 	            var searchUrl = serverAddress + searchRepo;
 	            console.log(searchUrl);
 	            _vue2.default.use(_vueResource2.default);
@@ -12148,7 +12148,7 @@
 	                update_star_history_graph(_this.repoData);
 	            }).catch(function (response) {
 	                console.log(response);
-	                _this.errorMessage = "Can't get data.{{{<br>}}}";
+	                _this.errorMessage = "Can't get data.";
 	            });
 	        }
 	    }
@@ -35840,7 +35840,7 @@
 /***/ 334:
 /***/ function(module, exports) {
 
-	module.exports = "\n{{ errorMessage }}\nInput repo name:\n<input type=\"text\" placeholder=\"{{ defaultRepo }}\" v-model=\"searchRepo\">\n<button class=\"btn\" v-on:click=\"SearchStarHistory\">Search</button>\n<div id=\"chart\">\n    <svg></svg>\n</div>\n";
+	module.exports = "\n{{ errorMessage }}<br/>\nInput repo name:\n<input type=\"text\" placeholder=\"{{ defaultRepo }}\" v-model=\"searchRepo\">\n<button class=\"btn\" v-on:click=\"SearchStarHistory\">Search</button>\n<div id=\"chart\">\n    <svg></svg>\n</div>\n";
 
 /***/ }
 

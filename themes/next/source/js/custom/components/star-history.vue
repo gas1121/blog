@@ -31,7 +31,7 @@ export default {
     methods: {
         SearchStarHistory: function(event) {
             let searchRepo = this.searchRepo?this.searchRepo:this.defaultRepo;
-            let serverAddress = 'http://127.0.0.1:5000/api/starhistory/1.0/';
+            let serverAddress = 'http://133.130.99.202/api/starhistory/1.0/';
             let searchUrl = serverAddress + searchRepo;
             console.log(searchUrl);
             Vue.use(VueResource);
